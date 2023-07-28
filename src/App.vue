@@ -1,30 +1,24 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <layout>
+    <router-view />
+  </layout>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { ref } from "vue";
+import layout from "./layouts/defaultLayout";
 
-nav {
-  padding: 30px;
+export default {
+  name: "LayoutDefault",
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  components: {
+    layout,
+  },
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  setup() {
+    return {
+      leftDrawerOpen: ref(false),
+    };
+  },
+};
+</script>
