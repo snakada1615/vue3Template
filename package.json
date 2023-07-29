@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
@@ -19,6 +21,13 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.1.1",
+    "@storybook/addon-interactions": "^7.1.1",
+    "@storybook/addon-links": "^7.1.1",
+    "@storybook/blocks": "^7.1.1",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/vue3": "^7.1.1",
+    "@storybook/vue3-webpack5": "^7.1.1",
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
@@ -30,6 +39,7 @@
     "@vue/cli-plugin-unit-jest": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "@vue/compiler-sfc": "^3.3.4",
     "@vue/eslint-config-typescript": "^9.1.0",
     "@vue/test-utils": "^2.0.0-0",
     "@vue/vue3-jest": "^27.0.0-alpha.1",
@@ -37,14 +47,19 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-storybook": "^0.6.13",
     "eslint-plugin-vue": "^8.0.3",
     "jest": "^27.0.5",
     "prettier": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "1.32.12",
     "sass-loader": "^12.0.0",
+    "storybook": "^7.1.1",
     "ts-jest": "^27.0.4",
     "typescript": "~4.5.5",
-    "vue-cli-plugin-quasar": "~5.0.2"
+    "vue-cli-plugin-quasar": "~5.0.2",
+    "vue-loader": "^17.2.2"
   },
   "eslintConfig": {
     "root": true,
@@ -55,7 +70,8 @@
       "plugin:vue/vue3-essential",
       "eslint:recommended",
       "@vue/typescript/recommended",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
+      "plugin:storybook/recommended"
     ],
     "parserOptions": {
       "ecmaVersion": 2020
