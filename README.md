@@ -90,7 +90,27 @@ const preview: Preview = {
 export default preview;
 
 ```
+7. StoryBookでactionを使用可能にする
+```typescript
+// addonのインストール
+$ yarn add -D @storybook/addon-actions
 
+// .storybook/main.tsの編集
+import { StorybookConfig } from "@storybook/vue3-vite";
+
+const config: StorybookConfig = {
+  framework: "@storybook/vue3-vite",
+  stories: ["../src/**/*.stories.@(js|ts)"],
+  addons: ["@storybook/addon-controls", "@storybook/addon-actions"], // 追加
+};
+
+export default config;
+
+// Storybook における action は、コンポーネントに対するイベントハンドラーで、argTypes に定義することで、
+// Action タブにイベントのログを表示します。アクション名は onXXX という命名にすることで、
+// 自動的に XXX に対応するイベントのハンドラとして定義されます。
+
+```
 
 ## Project setup
 ```
