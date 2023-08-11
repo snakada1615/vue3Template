@@ -110,6 +110,14 @@ export default config;
 // Action タブにイベントのログを表示します。アクション名は onXXX という命名にすることで、
 // 自動的に XXX に対応するイベントのハンドラとして定義されます。
 
+// src/stories/MyHeader.stories.ts
+argTypes: {
+  onLogin: { action: "onLogin" },
+  onLogout: { action: "onLogout" },
+  onSignUp: { action: "onSignUp" },
+},
+
+
 ```
 
 ## Project setup
